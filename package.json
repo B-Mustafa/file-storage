@@ -28,13 +28,15 @@
     "react-firebase-hooks": "^5.1.1",
     "react-hot-toast": "^2.4.1",
     "tailwind-merge": "^2.2.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-dropzone": "^5.1.0",
+    "@types/react-file-icon": "^1.0.4",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "^14.1.0",

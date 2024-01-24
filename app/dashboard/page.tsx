@@ -4,8 +4,6 @@ import { db } from "@/firebase";
 import { FileType } from "@/typings";
 import { auth } from "@clerk/nextjs";
 import { collection, getDocs } from "firebase/firestore";
-import { format } from "date-fns";
-import Footer from "@/components/Footer";
 
 
 async function Dashboard() {
