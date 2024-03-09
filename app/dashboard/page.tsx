@@ -23,10 +23,10 @@ async function Dashboard() {
       });
     // console.log(skeletonFiles)
   return (
-    <div className="border-t">
+    <div className="bg-light-background dark:bg-dark-background border-t h-screen">
         <Dropzone/>
 
-        <section className="container space-y-5">
+        <section className=" container space-y-5">
             <h2 className="font-bold">Files</h2>
 
             <div>

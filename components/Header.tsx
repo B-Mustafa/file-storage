@@ -6,9 +6,9 @@ import { ThemeToggler } from './ThemeToggler'
 
 function Header() {
   return (
-    <header className='flex item-center justify-between'>
+    <header className='bg-light-background dark:bg-dark-background flex item-center justify-between'>
       <Link href="/" className='flex items-center space-x-2'>
-        <div className='bg-[#2149ff]'>
+        <div className='bg-light-primary dark:bg-dark-primary'>
             <Image 
             src='/cloud_storage.png' 
             alt='logo' 
@@ -17,9 +17,9 @@ function Header() {
             width={50} 
             />
         </div>
-        <h1 className='font-bold text-xl '>Cloud Storage</h1>
+        <h1 className='font-bold text-xl '>File Sync</h1>
       </Link>
-      <div className='flex justify-center item-center space-x-2 px-2'>
+      <div className='flex justify-center item-center space-x-2 px-2 text-center'>
         {/* Theme toggler */}
         <ThemeToggler/>
 

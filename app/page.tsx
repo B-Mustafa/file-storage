@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="">
-      <div className="flex flex-col lg:flex-row item-center bg-[#1E1919] dark:bg-slate-800">
-        <div className="pl-5 p-18 flex flex-col bg-[#282829] dark:bg-slate-800 text-white space-y-5">
+      <div className="flex flex-col lg:flex-row item-center bg-light-background dark:bg-dark-background">
+        <div className="pl-5 p-18 flex flex-col bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text space-y-5">
           <h1 className="text-5xl font-bold pt-5">
             Welcome To File Sync!
             <br />
@@ -22,17 +22,17 @@ export default function Home() {
             provident sequi, veritatis nam harum consequatur ratione, itaque ab officia rerum.
           </p>
 
-          <Link href={"/dashboard"} className="flex bg-[#2149ff] w-fit p-5 mb-2 cursor-pointer">
+          <Link href={"/dashboard"} className="flex bg-light-secondary dark:bg-dark-secondary w-fit p-5 mb-2 cursor-pointer">
             Get Started For Free
             <ArrowRight className="ml-5" />
           </Link>
         </div>
-        <div className="bg-[#1E1919] dark:bg-slate-800 h-full p-10">
+        <div className="bg-light-background dark:bg-dark-background h-full p-10">
           <Image src="/cloud_storage.png" alt="cloud photo" height={100} width={100} className="invert" />
         </div>
       </div>
 
-      <section className="bg-gray-100 dark:bg-slate-900 p-10">
+      <section className="bg-light-background dark:bg-dark-background p-10">
         <div className="max-w-4xl ">
           <h2 className="text-3xl font-semibold mb-5">Why Choose File Sync?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -48,13 +48,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#1E1919] dark:bg-slate-800 text-white p-10">
+      <section className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text p-10">
         <div className="max-w-4xl ">
           <h2 className="text-3xl font-semibold mb-5">Get Started Today</h2>
           <p className="mb-5">
             Join File Sync today and experience the convenience of a reliable file storage solution.
           </p>
-          <Link href={"/dashboard"} className="flex bg-[#2149ff] w-fit p-5 cursor-pointer">
+          <Link href={"/dashboard"} className="flex bg-light-secondary dark:bg-dark-secondary w-fit p-5 cursor-pointer">
             Get Started For Free
             <ArrowRight className="ml-5" />
           </Link>
@@ -67,7 +67,7 @@ export default function Home() {
 
 // FeatureCard component
 const FeatureCard: React.FC<{ title: string; description: string }> = ({ title, description }) => (
-  <div className="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-md">
+  <div className="bg-light-accent dark:bg-dark-accent text-light-text dark:text-dark-text  rounded-lg p-6 shadow-md shadow-dark-primary dark:shadow-light-primary">
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
     <p>{description}</p>
   </div>

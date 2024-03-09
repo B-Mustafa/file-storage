@@ -82,7 +82,7 @@ function Dropzone() {
               <div {...getRootProps()}
                 className={cn(
                   "w-full h-52 flex justify-center items-center p-5 border border-dashed rounded-lg text-center",
-                  isDragActive ? "bg-[#035FFE] text-white animate-pulse" : "bg-slate-100/50 dark:bg-slate-800/50 text-slate-400" 
+                  isDragActive ? "bg-light-accent text-light-text animate-pulse" : "bg-light-accent/50 dark:bg-dark-accent/50 text-light-text dark:text-dark-text" 
                 )}
               >
                 <input {...getInputProps()} />

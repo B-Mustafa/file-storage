@@ -46,7 +46,7 @@ export const columns: ColumnDef<FileType>[] = [
       <div>{renderValue() ? (renderValue() as Date).toLocaleDateString() : ""}</div>
     ),
   },
-  
+
   {
     accessorKey: "size",
     header: "Size",
