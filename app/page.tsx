@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Hero from '@/public/Documents.jpg'
 import Link from "next/link";
 
 export default function Home() {
@@ -27,8 +28,8 @@ export default function Home() {
             <ArrowRight className="ml-5" />
           </Link>
         </div>
-        <div className="bg-light-background dark:bg-dark-background h-full p-10">
-          <Image src="/cloud_storage.png" alt="cloud photo" height={100} width={100} className="invert" />
+        <div className="bg-light-background dark:bg-dark-background h-full p-10 ">
+          <Image src={Hero}  alt="cloud photo" height={700} width={700} className="sm:h-auto sm:w-96 sm:items-center" />
         </div>
       </div>
 
