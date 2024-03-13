@@ -1,7 +1,21 @@
+import Image from "next/image";
+import Link from "next/link";
+import Logo from "@/public/cloud_storage.png"
+import { Linkedin } from "lucide-react";
+
+
 const Footer = () => {
     return (
-      <footer className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text py-8">
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-between">
+      <footer className="bg-light-accent dark:bg-dark-accent text-light-text dark:text-dark-text py-8 ">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-around">
+          <div className="pl-5">
+            <Image src={Logo} width={60} height={60} alt="Main Logo" />
+            <div>
+              <h2>Follow Us</h2>
+              <Link href="#"> <Linkedin/> </Link>
+              <Link href="#"> </Link>
+            </div>
+          </div>
           <div className="flex flex-col mb-4">
             <h4 className="text-xl font-semibold mb-2">Quick Links</h4>
             <ul>
