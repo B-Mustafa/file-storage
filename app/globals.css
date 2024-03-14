@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+::-webkit-scrollbar{
+  background: #7DDCDE;
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #218081;
+  border-radius: 10px;
+}

@@ -1,10 +1,49 @@
+"use client"
 import Footer from "@/components/Footer";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Hero from '@/public/Documents.jpg'
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmissionError(null);
+
+    try {
+      // Mock API call to simulate form submission
+      const response = await fetch('https://example.com/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to subscribe. Please try again later.');
+      }
+
+      setSubmissionSuccess(true);
+    } catch (error: any) {
+      setSubmissionError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="">
       <section className="flex flex-col lg:flex-row items-center  bg-light-background dark:bg-dark-background pb-10 pt-10 mt-2">
@@ -53,18 +92,31 @@ export default function Home() {
       </div>
     </section>
 
-      <section className=" bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text p-10">
-        <div className="max-w-4xl ">
-          <h2 className="text-3xl font-semibold mb-5">Get Started Today</h2>
-          <p className="mb-5">
-            Join File Sync today and experience the convenience of a reliable file storage solution.
-          </p>
-          <Link href={"/dashboard"} className="flex bg-light-secondary dark:bg-dark-secondary w-fit p-5 cursor-pointer">
-            Get Started For Free
-            <ArrowRight className="ml-5" />
-          </Link>
-        </div>
-      </section>
+    <section className="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text p-10 flex flex-col justify-center">
+      <div className="w-full">
+        <h2 className="text-3xl font-semibold mb-5 text-center">Subscribe to Our Newsletter</h2>
+        <p className="mb-5 text-center ">
+          Stay updated with the latest news, updates, and exclusive offers by subscribing to our newsletter.
+        </p>
+        <form className="flex flex-col sm:flex-row items-center justify-center" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Your Email Address"
+            className="w-full sm:w-auto p-3 mb-3 sm:mb-0 sm:mr-3 rounded-md border border-gray-300 focus:outline-none focus:border-primary dark:border-dark-border dark:focus:border-dark-primary"
+            onChange={handleChange}
+            value={email}
+            required
+          />
+          <button
+            type="submit"
+            className="bg-light-secondary dark:bg-dark-secondary text-light-text dark:text-dark-text py-3 px-8 rounded-md hover:bg-light-primary hover:text-dark-text dark:hover:bg-dark-primary dark:hover:text-dark-text focus:outline-none"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
       <Footer/>
     </main>
   );
