@@ -76,7 +76,7 @@ function TableWrapper( {skeletonFiles}: {skeletonFiles: FileType[]} ) {
       <Button
         variant={"outline"}
         onClick={()=>setSort (sort ==="desc" ? "asc" : "desc")}
-        className="ml-auto w-fit"
+        className="ml-auto w-fit bg-light-secondary hover:bg-light-primary dark:bg-dark-secondary dark:hover:bg-dark-primary"
       >Sort By {sort === "desc" ? "Newest" : "Oldest"} </Button>
 
       <DataTable columns={columns} data={initialFiles}></DataTable>
