@@ -7,3 +7,9 @@ export type FileType = {
     type: string;
     size: number;
     };
+
+export type FolderType = {
+    id: string;
+    name: string;
+    files: FileType[];
+};   
